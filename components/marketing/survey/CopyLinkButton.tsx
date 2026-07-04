@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-export default function CopyLinkButton() {
+export default function CopyLinkButton({
+  className = "btn btn-ghost",
+  label = "Copy survey link",
+}: {
+  className?: string;
+  label?: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   function handleCopy() {
@@ -13,8 +19,8 @@ export default function CopyLinkButton() {
   }
 
   return (
-    <button className="btn btn-ghost" onClick={handleCopy}>
-      {copied ? "✓ Copied!" : "Copy survey link"}
+    <button className={className} onClick={handleCopy}>
+      {copied ? "✓ Copied!" : label}
     </button>
   );
 }

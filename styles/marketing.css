@@ -941,3 +941,64 @@ nav {
 .field-error-msg { font-size: 12px; color: #d32f2f; margin-top: 4px; }
 .required-mark { color: var(--tw-red); margin-left: 2px; }
 .radio-group.has-error .radio-opt { border-color: #d32f2f; }
+
+/* ── LEGAL PAGES: Privacy & Terms (ported from privacy.html / terms.html inline <style>) ── */
+.legal-hero{background:#06033A;padding:80px 0 56px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.legal-hero::after{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(242,47,70,.18) 0%,transparent 65%);pointer-events:none}
+.legal-hero .container{position:relative;z-index:1}
+.legal-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F22F46;margin-bottom:14px;display:block}
+.legal-hero h1{font-family:'Inter',system-ui,sans-serif;font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-0.025em;color:#fff;margin-bottom:12px}
+.legal-hero p{font-size:16px;color:rgba(255,255,255,.5);font-weight:400;line-height:1.6}
+.legal-body{padding:64px 0 80px;max-width:760px;margin:0 auto;padding-left:24px;padding-right:24px}
+.legal-body h2{font-family:'Inter',system-ui,sans-serif;font-size:19px;font-weight:700;color:#1E293B;margin:40px 0 10px;letter-spacing:-0.015em;border-left:3px solid #F22F46;padding-left:12px}
+.legal-body h2:first-child{margin-top:0}
+.legal-body p{font-size:15px;color:#475569;font-weight:400;line-height:1.8;margin-bottom:14px}
+.legal-body ul{margin:0 0 14px 20px}
+.legal-body li{font-size:15px;color:#475569;font-weight:400;line-height:1.8;margin-bottom:6px}
+.legal-body a{color:#F22F46;text-decoration:none}
+.legal-body a:hover{text-decoration:underline}
+.legal-body strong{color:#1E293B;font-weight:600}
+.legal-rule{height:1px;background:#E2E8F0;margin:32px 0}
+.last-updated{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#94A3B8;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 12px;margin-bottom:36px}
+@media(max-width:600px){.legal-body{padding:48px 20px}}
+
+/* ── THANK YOU PAGE (ported from thankyou.html inline <style>) ── */
+.ty-hero{background:#06033A;min-height:calc(100vh - var(--ann-h) - var(--nav-h));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.ty-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(242,47,70,.18) 0%,transparent 65%);pointer-events:none}
+.ty-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(14,165,233,.12) 0%,transparent 65%);pointer-events:none}
+.ty-hero .inner{position:relative;z-index:1;max-width:580px}
+.check-ring{width:72px;height:72px;border-radius:50%;border:2px solid rgba(16,185,129,.5);background:rgba(16,185,129,.12);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 28px}
+.ty-badge{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F22F46;margin-bottom:16px}
+.ty-title{font-family:'Inter',system-ui,sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.06;letter-spacing:-0.03em;color:#fff;margin-bottom:18px}
+.ty-title span{color:#F22F46}
+.ty-sub{font-size:16px;font-weight:400;color:rgba(255,255,255,.55);max-width:460px;margin:0 auto 36px;line-height:1.75}
+.entry-box{background:rgba(242,47,70,.1);border:1px solid rgba(242,47,70,.3);border-radius:8px;padding:24px 36px;display:inline-block;margin-bottom:40px}
+.entry-num{font-family:'Inter',system-ui,sans-serif;font-size:52px;font-weight:700;color:#F22F46;line-height:1;letter-spacing:-0.03em}
+.entry-lbl{font-size:12px;color:rgba(255,255,255,.35);margin-top:6px;font-weight:400}
+.what-next{max-width:500px;margin:0 auto 44px}
+.what-next h3{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:20px;letter-spacing:-0.015em}
+.next-steps{list-style:none;text-align:left}
+.next-steps li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px;color:rgba(255,255,255,.5);font-weight:400;line-height:1.65}
+.next-steps li:last-child{border-bottom:none}
+.step-dot{width:24px;height:24px;border-radius:50%;background:#F22F46;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.share-btn{padding:10px 20px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;border:2px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);background:transparent;transition:all .15s;font-family:'Inter',sans-serif}
+.share-btn:hover{color:#fff;border-color:#fff}
+.share-btn.primary{background:#F22F46;border-color:#F22F46;color:#fff}
+.share-btn.primary:hover{background:#d41e33;border-color:#d41e33}
+
+/* ── SMS CONSENT PAGE (ported from sms-consent.html inline <style>) ── */
+.flow-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:20px 24px;margin:16px 0 24px}
+.flow-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.flow-step:last-child{margin-bottom:0}
+.flow-num{min-width:26px;height:26px;border-radius:50%;background:#F22F46;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.flow-text{font-size:14px;color:#334155;line-height:1.7}
+.flow-text strong{color:#1E293B}
+.sms-sample{background:#fff;border:1px solid #CBD5E1;border-radius:8px;padding:14px 18px;margin:12px 0;font-size:14px;color:#334155;line-height:1.7;font-family:'JetBrains Mono',monospace}
+.badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;margin-bottom:8px}
+.badge-green{background:#DCFCE7;color:#166534}
+.badge-blue{background:#DBEAFE;color:#1E40AF}
+.badge-red{background:#FEE2E2;color:#991B1B}
+.keyword-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px}
+.keyword-chip{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;padding:5px 12px;border-radius:5px;border:1px solid #E2E8F0;background:#F8FAFC;color:#1E293B}
+.keyword-chip span{font-size:11px;color:#64748B;margin-left:6px}
