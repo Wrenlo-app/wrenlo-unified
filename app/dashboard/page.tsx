@@ -1,4 +1,6 @@
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
+import Card from '@/components/ui/Card';
+import Badge from '@/components/ui/Badge';
 
 export const dynamic = 'force-dynamic'; // prevents static pre-render at build time
 
@@ -123,10 +125,10 @@ export default async function DashboardPage() {
 
 function MetricCard({ title, value, color }: { title: string; value: string; color: string }) {
   return (
-    <div style={{ backgroundColor: '#fff', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px', borderTop: `4px solid ${color}` }}>
+    <Card variant="dashboard" accentColor={color}>
       <div style={{ fontSize: '13px', color: '#6b7280', marginBottom: '8px' }}>{title}</div>
       <div style={{ fontSize: '28px', fontWeight: '700', color: '#111827' }}>{value}</div>
-    </div>
+    </Card>
   );
 }
 
@@ -141,9 +143,9 @@ function UrgencyBadge({ urgency }: { urgency: string | null }) {
   };
   const style = colors[urgency || ''] || { bg: '#f9fafb', text: '#6b7280' };
   return (
-    <span style={{ backgroundColor: style.bg, color: style.text, padding: '2px 8px', borderRadius: '9999px', fontSize: '12px', fontWeight: '500' }}>
+    <Badge variant="dashboard" bg={style.bg} text={style.text}>
       {urgency || 'unknown'}
-    </span>
+    </Badge>
   );
 }
 
@@ -159,8 +161,8 @@ function StatusBadge({ status }: { status: string }) {
   };
   const style = colors[status] || { bg: '#f9fafb', text: '#6b7280' };
   return (
-    <span style={{ backgroundColor: style.bg, color: style.text, padding: '2px 8px', borderRadius: '9999px', fontSize: '12px', fontWeight: '500', whiteSpace: 'nowrap' }}>
+    <Badge variant="dashboard" bg={style.bg} text={style.text} nowrap>
       {status.replace(/_/g, ' ')}
-    </span>
+    </Badge>
   );
 }

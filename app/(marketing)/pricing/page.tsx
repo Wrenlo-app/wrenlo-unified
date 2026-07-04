@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PricingHeroAndPlans from "@/components/marketing/pricing/PricingHeroAndPlans";
 import ROICalculator from "@/components/marketing/pricing/ROICalculator";
 import FAQAccordion from "@/components/marketing/pricing/FAQAccordion";
 import CTAButton from "@/components/marketing/CTAButton";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 export const metadata: Metadata = {
   title: "Pricing — Wrenlo AI",
@@ -95,9 +95,9 @@ export default function PricingPage() {
               <CTAButton label="Pricing Question" className="btn btn-red btn-lg">
                 Talk to Us →
               </CTAButton>
-              <Link className="btn btn-white btn-lg" href="/product">
+              <ButtonLink variant="marketing-white" size="lg" href="/product">
                 See the product first
-              </Link>
+              </ButtonLink>
             </div>
           </div>
         </div>
