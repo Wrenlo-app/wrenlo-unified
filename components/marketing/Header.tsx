@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCTAPopup } from "./CTAPopup";
+import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
   { href: "/product", label: "Product" },
@@ -65,12 +66,12 @@ export default function Header() {
           </div>
 
           <div className="nav-ctas">
-            <button className="btn btn-ghost" onClick={() => openPopup("Free Audit")}>
+            <Button variant="marketing-ghost" onClick={() => openPopup("Free Audit")}>
               Free Audit
-            </button>
-            <button className="btn btn-primary" onClick={() => openPopup("Book Pilot Call")}>
+            </Button>
+            <Button variant="marketing-primary" onClick={() => openPopup("Book Pilot Call")}>
               Book Pilot Call
-            </button>
+            </Button>
           </div>
 
           <button className="hamburger" onClick={() => setMenuOpen(true)}>
@@ -94,24 +95,26 @@ export default function Header() {
           </Link>
         ))}
         <div className="mobile-menu-ctas">
-          <button
-            className="btn btn-ghost btn-full"
+          <Button
+            variant="marketing-ghost"
+            size="full"
             onClick={() => {
               setMenuOpen(false);
               openPopup("Free Missed-Call Audit");
             }}
           >
             Free Missed-Call Audit
-          </button>
-          <button
-            className="btn btn-primary btn-full"
+          </Button>
+          <Button
+            variant="marketing-primary"
+            size="full"
             onClick={() => {
               setMenuOpen(false);
               openPopup("Book Pilot Call");
             }}
           >
             Book Pilot Call
-          </button>
+          </Button>
         </div>
       </div>
     </>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import CTAButton from "@/components/marketing/CTAButton";
 import SurveyForm from "@/components/marketing/survey/SurveyForm";
 import CopyLinkButton from "@/components/marketing/survey/CopyLinkButton";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 export const metadata: Metadata = {
   title: "Founding Survey — Wrenlo AI · Win $100 Gift Card",
@@ -50,9 +51,9 @@ export default function SurveyPage() {
             card. Every respondent gets the industry benchmark report free.
           </p>
           <div className="page-hero-actions">
-            <a className="btn btn-primary btn-lg" href="#form">
+            <ButtonLink variant="marketing-primary" size="lg" href="#form">
               Take the Survey
-            </a>
+            </ButtonLink>
             <Link
               className="btn btn-lg"
               href="/product"
@@ -195,22 +196,24 @@ export default function SurveyPage() {
               survey link.
             </p>
             <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
-              <a
-                className="btn btn-primary"
+              <ButtonLink
+                variant="marketing-primary"
                 href="https://www.facebook.com/sharer/sharer.php?u=https://wrenlo.co/survey"
+                external
                 target="_blank"
                 rel="noreferrer"
               >
                 Share on Facebook
-              </a>
-              <a
-                className="btn btn-ghost"
+              </ButtonLink>
+              <ButtonLink
+                variant="marketing-ghost"
                 href="https://www.linkedin.com/sharing/share-offsite/?url=https://wrenlo.co/survey"
+                external
                 target="_blank"
                 rel="noreferrer"
               >
                 Share on LinkedIn
-              </a>
+              </ButtonLink>
               <CopyLinkButton />
             </div>
           </div>
