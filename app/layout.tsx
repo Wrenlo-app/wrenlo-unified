@@ -84,7 +84,6 @@ export const metadata: Metadata = {
     ],
     apple: "/favicon-128x128.png",
   },
-
 };
 
 export default function RootLayout({
@@ -99,6 +98,10 @@ export default function RootLayout({
     >
       <head>
         {/* JSON-LD Structured Data for Organization */}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/favicon-128x128.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -111,7 +114,7 @@ export default function RootLayout({
               description: "AI-powered front desk and lead recovery solution for home service contractors",
               sameAs: [
                 "https://twitter.com/wrenlo",
-                "https://linkedin.com/company/wrenlo",
+                "https://linkedin.com/company/wrenlo-ai",
                 // Add your social media URLs
               ],
               contactPoint: {

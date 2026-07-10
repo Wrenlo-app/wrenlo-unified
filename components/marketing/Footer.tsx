@@ -25,12 +25,12 @@ export default function Footer() {
           <div>
             <div className="footer-col-title">Trades</div>
             <div className="footer-links">
-              <Link className="footer-link" href="/product">HVAC</Link>
-              <Link className="footer-link" href="/product">Plumbing</Link>
-              <Link className="footer-link" href="/product">Electrical</Link>
-              <Link className="footer-link" href="/product">Roofing</Link>
-              <Link className="footer-link" href="/product">Garage Door</Link>
-              <Link className="footer-link" href="/product">Pest Control</Link>
+              <Link className="footer-link" href="/hvac">HVAC</Link>
+              <Link className="footer-link" href="/plumbing">Plumbing</Link>
+              <Link className="footer-link" href="/electrical">Electrical</Link>
+              <Link className="footer-link" href="/roofing">Roofing</Link>
+              <Link className="footer-link" href="/garage-door">Garage Door</Link>
+              <Link className="footer-link" href="/pest-control">Pest Control</Link>
             </div>
           </div>
           <div>
