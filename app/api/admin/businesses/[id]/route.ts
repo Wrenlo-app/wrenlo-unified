@@ -21,9 +21,10 @@ const UpdateBusinessSchema = z.object({
 
 export async function PATCH(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = UpdateBusinessSchema.parse(await req.json());
 
     const updates: Record<string, unknown> = { ...body };
@@ -34,7 +35,7 @@ export async function PATCH(
     const { data, error } = await supabaseAdmin
       .from('businesses')
       .update(updates)
-      .eq('id', params.id)
+      .eq('id', id)
       .select('id, name, onboarding_status, phone_number, calendar_id')
       .single();
 
