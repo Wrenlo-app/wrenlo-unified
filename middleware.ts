@@ -1,6 +1,11 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || '')
+  .split(',')
+  .map((e) => e.trim().toLowerCase())
+  .filter(Boolean)
+
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({
     request: { headers: request.headers },
@@ -27,7 +32,6 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  // Refreshes the session if it's expired, and gives us the current user.
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -36,13 +40,18 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
+  // Extra gate for /admin: logged in is not enough, must be on the allowlist.
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    const email = user.email?.toLowerCase() || ''
+    if (!ADMIN_EMAILS.includes(email)) {
+      return NextResponse.redirect(new URL('/dashboard', request.url))
+    }
+  }
+
   return response
 }
 
-// Scoped to /dashboard/* only. Because the matcher itself excludes
-// (marketing) and (auth) routes and app/api/**, this middleware never runs
-// on those paths — no exclusion logic needed, and no risk of accidentally
-// gating a marketing/API route.
+// Now scoped to both /dashboard/* and /admin/*.
 export const config = {
-  matcher: ['/dashboard/:path*'],
+  matcher: ['/dashboard/:path*', '/admin/:path*'],
 }
