@@ -42,7 +42,7 @@ export default function GarageDoorPage() {
       ]}
       resultText="Priority classified · Owner alerted · Same-night slot held"
       resultSub="Transcript saved · Est. job value: $350+"
-      faqs={faqs} {/* ← now references the shared variable instead of an inline array */}
+      faqs={faqs}
       />
     </>
   );

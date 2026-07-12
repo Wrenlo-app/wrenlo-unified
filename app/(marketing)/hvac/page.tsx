@@ -42,7 +42,7 @@ export default function HVACPage() {
       ]}
       resultText="Emergency classified · Owner alerted · 7am slot held"
       resultSub="Transcript saved · Est. job value: $1,200+"
-      faqs={faqs} {/* ← now references the shared variable instead of an inline array */}
+      faqs={faqs}
       />
     </>
   );

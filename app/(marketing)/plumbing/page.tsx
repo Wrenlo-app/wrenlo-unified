@@ -42,7 +42,7 @@ export default function PlumbingPage() {
       ]}
       resultText="Emergency classified · Owner alerted · Dispatch confirmed"
       resultSub="Transcript saved · Est. job value: $650+"
-      faqs={faqs} {/* ← now references the shared variable instead of an inline array */}
+      faqs={faqs}
       />
     </>
   );

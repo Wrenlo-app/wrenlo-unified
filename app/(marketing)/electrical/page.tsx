@@ -42,7 +42,7 @@ export default function ElectricalPage() {
       ]}
       resultText="Emergency classified · Owner alerted · Same-night callback"
       resultSub="Transcript saved · Est. job value: $450+"
-      faqs={faqs} {/* ← now references the shared variable instead of an inline array */}
+      faqs={faqs}
       />
     </>
   );

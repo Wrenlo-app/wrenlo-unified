@@ -42,7 +42,7 @@ export default function PestControlPage() {
       ]}
       resultText="Priority classified · Owner alerted · Same-day slot held"
       resultSub="Transcript saved · Est. job value: $275+"
-      faqs={faqs} {/* ← now references the shared variable instead of an inline array */}
+      faqs={faqs}
       />
     </>
   );
