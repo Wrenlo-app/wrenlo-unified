@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import TradePage from "@/components/marketing/TradePage";
+import FAQSchema from "@/components/marketing/FAQSchema";
 
 export const metadata: Metadata = {
   title: "AI Front Desk for Garage Door Contractors | Wrenlo",
   description: "Wrenlo answers missed and after-hours garage door calls, prioritizes stuck-door and security emergencies, and books approved repairs 24/7.",
 };
 
+const faqs = [ // ← pulled out into its own variable so it can be reused below
+  { q: "How fast does Wrenlo answer a call?", a: "Immediately — Wrenlo picks up missed and after-hours calls in real time, no hold music, no voicemail." },
+  { q: "Does Wrenlo replace my scheduling or invoicing tool?", a: "No. Wrenlo is a front-office layer that sits on top of your existing tools (like Jobber or Housecall Pro) and writes leads and bookings back into them." },
+  { q: "What happens if a call is a real emergency?", a: "Wrenlo never troubleshoots. No-heat, no-AC, and gas smell calls escalate immediately to the owner, with clear safety guidance to the caller." },
+  { q: "Is there a contract?", a: "No. There's a 14-day free pilot, and a $299 setup fee that's credited back to your first month." },
+];
+
 export default function GarageDoorPage() {
   return (
+    <>
+      <FAQSchema faqs={faqs} />
     <TradePage
       trade="Garage Door"
       statPill="A stuck door is a security problem, not just an inconvenience"
@@ -32,12 +42,8 @@ export default function GarageDoorPage() {
       ]}
       resultText="Priority classified · Owner alerted · Same-night slot held"
       resultSub="Transcript saved · Est. job value: $350+"
-      faqs={[
-        { q: "How fast does Wrenlo answer a call?", a: "Immediately — Wrenlo picks up missed and after-hours calls in real time, no hold music, no voicemail." },
-        { q: "Does Wrenlo replace my scheduling or invoicing tool?", a: "No. Wrenlo is a front-office layer that sits on top of your existing tools and writes leads and bookings back into them." },
-        { q: "What happens if a call is a real emergency?", a: "Wrenlo never troubleshoots. Security concerns and stuck doors escalate immediately to the owner, with basic safety guidance to the caller." },
-        { q: "Is there a contract?", a: "No. There's a 14-day free pilot, and a $299 setup fee that's credited back to your first month." },
-      ]}
-    />
+      faqs={faqs}
+      />
+    </>
   );
 }

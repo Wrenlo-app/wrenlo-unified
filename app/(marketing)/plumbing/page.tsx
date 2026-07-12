@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import TradePage from "@/components/marketing/TradePage";
+import FAQSchema from "@/components/marketing/FAQSchema";
 
 export const metadata: Metadata = {
   title: "AI Front Desk for Plumbing Contractors | Wrenlo",
   description: "Wrenlo answers missed and after-hours plumbing calls, classifies burst-pipe and water emergencies, and books approved estimates 24/7.",
 };
 
+const faqs = [ // ← pulled out into its own variable so it can be reused below
+  { q: "How fast does Wrenlo answer a call?", a: "Immediately — Wrenlo picks up missed and after-hours calls in real time, no hold music, no voicemail." },
+  { q: "Does Wrenlo replace my scheduling or invoicing tool?", a: "No. Wrenlo is a front-office layer that sits on top of your existing tools (like Jobber or Housecall Pro) and writes leads and bookings back into them." },
+  { q: "What happens if a call is a real emergency?", a: "Wrenlo never troubleshoots. No-heat, no-AC, and gas smell calls escalate immediately to the owner, with clear safety guidance to the caller." },
+  { q: "Is there a contract?", a: "No. There's a 14-day free pilot, and a $299 setup fee that's credited back to your first month." },
+];
+
 export default function PlumbingPage() {
   return (
+    <>
+      <FAQSchema faqs={faqs} />
     <TradePage
       trade="Plumbing"
       statPill="Water emergencies don't wait for business hours"
@@ -32,12 +42,8 @@ export default function PlumbingPage() {
       ]}
       resultText="Emergency classified · Owner alerted · Dispatch confirmed"
       resultSub="Transcript saved · Est. job value: $650+"
-      faqs={[
-        { q: "How fast does Wrenlo answer a call?", a: "Immediately — Wrenlo picks up missed and after-hours calls in real time, no hold music, no voicemail." },
-        { q: "Does Wrenlo replace my scheduling or invoicing tool?", a: "No. Wrenlo is a front-office layer that sits on top of your existing tools and writes leads and bookings back into them." },
-        { q: "What happens if a call is a real emergency?", a: "Wrenlo never troubleshoots. Burst pipes and major leaks escalate immediately to the owner, with basic safety guidance (like locating a shutoff valve) to the caller." },
-        { q: "Is there a contract?", a: "No. There's a 14-day free pilot, and a $299 setup fee that's credited back to your first month." },
-      ]}
-    />
+      faqs={faqs}
+      />
+    </>
   );
 }
