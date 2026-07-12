@@ -59,7 +59,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wrenlo | AI Front Desk & Lead Recovery for Home Service Contractors",
     description: "Never miss a lead again. Wrenlo automates customer calls, texts, and lead management for home service contractors.",
-    creator: "@wrenlo",
     images: ["https://www.wrenlo.co/twitter-image.png"],
   },
   robots: {
@@ -97,11 +96,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/favicon-128x128.png" />
+
         {/* JSON-LD Structured Data for Organization */}
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" href="/favicon-128x128.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -111,20 +111,14 @@ export default function RootLayout({
               name: "Wrenlo",
               url: "https://www.wrenlo.co",
               logo: "https://www.wrenlo.co/wrenlo-logo.png",
-              description: "AI-powered front desk and lead recovery solution for home service contractors",
+              description: "Wrenlo is an AI front desk for home service contractors that answers missed and after-hours calls, qualifies leads, and books approved estimates.",
               sameAs: [
-                "https://twitter.com/wrenlo",
                 "https://linkedin.com/company/wrenlo-ai",
-                // Add your social media URLs
               ],
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "Customer Support",
-                // Add your phone number if desired
-              },
             }),
           }}
         />
+
         {/* JSON-LD Structured Data for SoftwareApplication */}
         <script
           type="application/ld+json"
@@ -136,17 +130,11 @@ export default function RootLayout({
               description: "AI Front Desk and Lead Recovery for Home Service Contractors",
               url: "https://www.wrenlo.co",
               applicationCategory: "BusinessApplication",
-              offers: {
-                "@type": "Offer",
-                price: "Contact for pricing",
-                priceCurrency: "USD",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                ratingCount: "150",
-                // Update with your actual ratings
-              },
+              offers: [
+                { "@type": "Offer", name: "Starter", price: "199", priceCurrency: "USD" },
+                { "@type": "Offer", name: "Growth", price: "399", priceCurrency: "USD" },
+                { "@type": "Offer", name: "Pro", price: "799", priceCurrency: "USD" },
+              ],
             }),
           }}
         />
