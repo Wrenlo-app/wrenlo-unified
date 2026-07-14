@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTAButton from "@/components/marketing/CTAButton";
 
 export const metadata: Metadata = {
-  title: "Wrenlo AI | Answer Every Call, Book Every Job",
+  title: "Product — Wrenlo AI | How It Works",
   description:
     "How Wrenlo works: AI call answering, missed-call text-back, trade-specific intake, estimate booking, follow-up sequences, and a revenue dashboard. Built for home-service contractors.",
 };
