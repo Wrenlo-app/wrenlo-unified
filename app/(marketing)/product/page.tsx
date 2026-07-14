@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTAButton from "@/components/marketing/CTAButton";
 
 export const metadata: Metadata = {
-  title: "Product — Wrenlo AI | How It Works",
+  title: "Wrenlo AI | Answer Every Call, Book Every Job",
   description:
     "How Wrenlo works: AI call answering, missed-call text-back, trade-specific intake, estimate booking, follow-up sequences, and a revenue dashboard. Built for home-service contractors.",
 };
@@ -12,7 +12,7 @@ const CAPTURE_FEATURES = [
   {
     icon: "🌙",
     title: "24/7 AI Call Answering",
-    body: "Answers every missed and after-hours call in your business name. Handles emergency triage, qualification, and booking using trade-specific scripts built for HVAC, plumbing, electrical, and more.",
+    body: "Answers every missed and after-hours call in your business name. Handles emergency triage, qualification, and booking using trade-specific scripts built for HVAC, plumbing, electrical, roofing, garage door, and pest control.",
     badge: "Core feature",
   },
   {
@@ -46,6 +46,7 @@ const TRADES = [
   {
     icon: "🌡️",
     name: "HVAC",
+    status: "live",
     scenarios: [
       { tag: "urgent", label: "Urgent", text: "No AC / No heat — emergency route, owner alert, same-day slot" },
       { tag: "book", label: "Book", text: "Replacement estimate — system age, type, and photos captured" },
@@ -55,6 +56,7 @@ const TRADES = [
   {
     icon: "🔧",
     name: "Plumbing",
+    status: "live",
     scenarios: [
       { tag: "urgent", label: "Urgent", text: "Active leak / burst pipe — water shutoff confirmed, dispatch alert" },
       { tag: "book", label: "Book", text: "Drain clog / fixture — non-emergency, next available window" },
@@ -64,6 +66,7 @@ const TRADES = [
   {
     icon: "⚡",
     name: "Electrical",
+    status: "live",
     scenarios: [
       { tag: "urgent", label: "Urgent", text: "Burning smell / sparking — immediate safety escalation, no troubleshooting" },
       { tag: "book", label: "Book", text: "Panel upgrade / EV charger — estimate with permit and load details" },
@@ -73,6 +76,7 @@ const TRADES = [
   {
     icon: "🏠",
     name: "Roofing",
+    status: "live",
     scenarios: [
       { tag: "urgent", label: "Urgent", text: "Active leak / interior damage — tarping request, emergency slot" },
       { tag: "book", label: "Book", text: "Full replacement — age, material, insurance, photo request" },
@@ -82,6 +86,7 @@ const TRADES = [
   {
     icon: "🚪",
     name: "Garage Door",
+    status: "live",
     scenarios: [
       { tag: "urgent", label: "Urgent", text: "Car trapped / off-track — same-day slot held, priority alert" },
       { tag: "book", label: "Book", text: "Broken spring / opener — parts context collected, service booked" },
@@ -91,6 +96,7 @@ const TRADES = [
   {
     icon: "🐛",
     name: "Pest Control",
+    status: "live",
     scenarios: [
       { tag: "urgent", label: "Urgent", text: "Bed bugs / active infestation — same-week inspection" },
       { tag: "book", label: "Book", text: "Routine inspection / recurring plan — first visit booked" },
@@ -100,6 +106,7 @@ const TRADES = [
   {
     icon: "✨",
     name: "Cleaning",
+    status: "soon",
     scenarios: [
       { tag: "book", label: "Book", text: "Recurring clean — frequency, property size, first visit booked" },
       { tag: "book", label: "Book", text: "One-time deep clean — scope, timing, address, quote triggered" },
@@ -109,6 +116,7 @@ const TRADES = [
   {
     icon: "🌿",
     name: "Landscaping",
+    status: "soon",
     scenarios: [
       { tag: "book", label: "Book", text: "Weekly maintenance — lot size, frequency, start date booked" },
       { tag: "book", label: "Book", text: "Design estimate — scope, budget, address collected" },
@@ -165,8 +173,8 @@ export default function ProductPage() {
           </h1>
           <p>
             Four tightly integrated modules — not a replacement for your FSM, but the
-            front-office layer that feeds it. Answers calls, qualifies leads, books estimates,
-            and shows what revenue was captured.
+            front-office layer that feeds it. Answers calls, recovers missed leads by
+            text, books estimates, and gets you the review after the job&apos;s done.
           </p>
           <div className="page-hero-actions">
             <CTAButton label="Start 14-Day Pilot" className="btn btn-red btn-lg">
@@ -240,6 +248,9 @@ export default function ProductPage() {
               <div className="trade-card reveal" key={t.name}>
                 <div className="trade-icon">{t.icon}</div>
                 <div className="trade-name">{t.name}</div>
+                <span className={`int-badge ${t.status === "live" ? "live" : "soon"}`}>
+                  {t.status === "live" ? "Live now" : "Coming soon"}
+                </span>
                 <div className="trade-scenarios">
                   {t.scenarios.map((s, i) => (
                     <div className="trade-scenario" key={i}>
