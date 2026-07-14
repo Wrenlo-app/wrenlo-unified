@@ -4,9 +4,9 @@ import TypingBubble from "@/components/marketing/TypingBubble";
 import { HeroCTAs, BottomCTAs, PilotCTACard } from "@/components/marketing/HomeCTAs";
 
 export const metadata: Metadata = {
-  title: "Wrenlo AI — AI Front Desk for HVAC & Plumbing Contractors",
+  title: "Wrenlo | AI Front Desk & Lead Recovery for Home Service Contractors",
   description:
-    "Wrenlo answers missed and after-hours calls, qualifies the job, books approved estimates, and shows how much revenue was recovered.",
+    "Wrenlo is an AI-powered front desk and lead recovery solution for U.S. home service contractors. Answers missed calls, texts back missed leads, books approved estimates, and gets the review after every job.",
 };
 
 const PROBLEMS = [
@@ -99,9 +99,9 @@ export default function HomePage() {
                 you were <em>on another job.</em>
               </h1>
               <p className="hero-sub">
-                Wrenlo answers every missed and after-hours call, qualifies the lead, books
-                approved estimates, and shows exactly how much revenue was recovered — without
-                replacing your existing tools.
+                Wrenlo answers every missed and after-hours call, texts back leads who
+                don&apos;t leave a message, books approved estimates, and gets you the
+                review once the job&apos;s done — without replacing your existing tools.
               </p>
               <HeroCTAs />
               <div className="hero-trust">
@@ -267,6 +267,42 @@ export default function HomePage() {
       </section>
 
       <section className="section" style={{ background: "var(--bg2)" }}>
+        <div className="container">
+          <div className="sec-header centered">
+            <span className="eyebrow">Where we're headed</span>
+            <h2 className="sec-title">
+              One product closes the loop.
+              <br />
+              <em>Most tools only cover one piece.</em>
+            </h2>
+            <p className="sec-sub">
+              A generic AI receptionist answers your phone. A separate app asks for
+              reviews. A separate text-back tool chases missed leads. Wrenlo does all
+              three in one place, for one price — and it&apos;s the foundation for
+              something bigger.
+            </p>
+          </div>
+          <div className="feat-grid">
+            <div className="feat-card">
+              <div className="feat-icon">✓</div>
+              <h3>Today — AI Front Desk &amp; Lead Recovery</h3>
+              <p>Live now across HVAC, plumbing, electrical, roofing, garage door, and pest control: call answering, missed-call SMS win-back, estimate booking, and automated review requests.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-icon">→</div>
+              <h3>Next — Deeper Operational Control</h3>
+              <p>Dispatch logic, job-status automation, and tighter two-way sync with the FSM tools contractors already run their business on.</p>
+            </div>
+            <div className="feat-card">
+              <div className="feat-icon">◎</div>
+              <h3>Later — AI-Native Field Service Management</h3>
+              <p>Jobber and Housecall Pro added AI as a feature to an existing platform. Wrenlo is building the reverse: an AI-first operating system for small contractors, starting from the front desk outward.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ background: "var(--bg)" }}>
         <div className="container">
           <div className="sec-header centered">
             <span className="eyebrow">Explore Wrenlo</span>
