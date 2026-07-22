@@ -106,8 +106,7 @@ export default function PrivacyPage() {
           message from that Business following up on your call.
         </p>
         <p>
-          By calling a Business that uses Wrenlo, you acknowledge that the Business may send you
-          a single automated text message as a follow-up to your call. Message frequency varies
+          If you call a Business that uses Wrenlo and your call is not answered, you may receive a one-time SMS from that Business offering to follow up. Responding to that message is entirely optional. You may reply STOP at any time to receive no further messages. No follow-up messages are sent unless you reply YES. Message frequency varies
           based on your interaction with the Business. Message and data rates may apply.
         </p>
         <p>
