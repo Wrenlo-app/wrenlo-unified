@@ -59,7 +59,7 @@ export default function SmsConsentPage() {
           <div className="flow-step">
             <div className="flow-num">3</div>
             <div className="flow-text">
-              <strong>Within 30 seconds, the Business sends one SMS to the caller's number offering to follow up. This message is purely a one-time outreach offer — the homeowner is not required to respond and can reply STOP immediately. Only homeowners who reply YES receive any further messages. Homeowners who do not reply or reply STOP receive no further contact. This message identifies the Business by name,
+              <strong>Single opt-in SMS is sent<strong> — Within 30 seconds, the Business sends one SMS to the caller's number offering to follow up. This message is purely a one-time outreach offer — the homeowner is not required to respond and can reply STOP immediately. Only homeowners who reply YES receive any further messages. Homeowners who do not reply or reply STOP receive no further contact. This message identifies the Business by name,
               explains the context, and asks for explicit permission before any further contact.
               It includes STOP opt-out instructions.
             </div>
